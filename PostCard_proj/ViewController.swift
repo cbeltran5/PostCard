@@ -10,6 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var messageLabel: UILabel!
+    
+    @IBOutlet var nameField: UITextField!
+    
+    @IBOutlet var messageField: UITextField!
+    
+    @IBOutlet weak var sendButtonConfirm: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +28,19 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func sendButton(sender: UIButton) {
+        //sneds message that button was pressed
+        messageLabel.hidden = 0
+        messageLabel.text = messageField.text
+        messageField.text = ""
+        
+        messageField.resignFirstResponder()
+        
+        messageLabel.textColor = UIColor.redColor()
+        
+        sendButtonConfirm.setTitle("Sent!", forState: UIControlState.Normal)
+    }
+    
 
 }
 
