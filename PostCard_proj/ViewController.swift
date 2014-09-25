@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sendButton(sender: UIButton) {
-        //sneds message that button was pressed
+        //sends message that button was pressed
         messageLabel.hidden = 0
         messageLabel.text = messageField.text
         messageField.text = ""
